@@ -172,8 +172,8 @@ body{
     font-weight: 600;
 }
 .infoCalculator-open{
-    color: rgb(255, 255, 255);
-    border: 2px dotted #fff;
+    color: #ffb624;
+    border: 2px dotted #ffb624;
     background-color: rgb(36, 32, 32);
     padding: 17px 10px;
     display: flex;
@@ -221,4 +221,46 @@ body{
     position: absolute;
     left: -10px;
     top: 5px;
+}
+.cont{
+    width: 80%;
+    margin:0 auto;
+    display: flex;
+    flex-direction: column;
+}
+.models__title{
+    margin-top: 30px;
+    text-align: center;
+    font-size:64px;
+    font-weight: 900;
+    color: #545454;
+}
+.models-btns{
+    justify-content: center;
+    display: flex;
+    margin-top:30px;
+    margin-bottom: 45px;
+}
+.models-btn-item{
+    padding: 25px 35px;
+    border: none;
+    background-color: #faba39;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #545454;
+}
+.btn-shkaf{
+border-left:1px solid #545454 ;
+border-right:1px solid #545454 ;
+}
+.btn-kitchen{
+    border-radius: 3em 0 0  3em;
+}
+.btn-other{
+    border-radius: 0 3em 3em 0;
+}
+.active{
+    box-shadow:  3px 3px 5px black;
+    border: 1px solid #545454;
 }
