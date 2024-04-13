@@ -228,13 +228,25 @@ body{
     display: flex;
     flex-direction: column;
 }
-.models__title{
-    margin-top: 30px;
+.site__title{
+    margin-bottom:35px;
     text-align: center;
     font-size:64px;
     font-weight: 900;
     color: #545454;
 }
+.models-items{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 30px;
+}
+.models-item{
+    max-width: 470px;
+    display: flex;
+    flex-direction: column;
+}
+
 .models-btns{
     justify-content: center;
     display: flex;
@@ -244,11 +256,82 @@ body{
 .models-btn-item{
     padding: 25px 35px;
     border: none;
-    background-color: #faba39;
+    background:linear-gradient(180deg, #f5d89f 0%, #ddb15c 100%);
     font-size: 15px;
     text-transform: uppercase;
     font-weight: 600;
     color: #545454;
+}
+.model-item-img{
+   width: 100%;
+   border-radius: 0.4em 0.4em 0 0 ;
+}
+.models-moreInfo{  
+    background:linear-gradient(180deg, #f5d89f 0%, #ddb15c 100%);
+    border-radius: 0 0 0.4em 0.4em;
+    margin-bottom: 8px;
+}
+
+.model-item-btnsPrice{
+    display: flex;
+    width: 100%;
+    gap:3px;
+    padding: 0 1px 2px 3px;
+}
+.modelPrice-btn{
+    font-size: 14px;
+    color: #525252;
+    line-height: 1.1;
+    flex-grow: 1;
+    padding: 8px 0;
+    background-color: #fff;
+    border: none;
+
+}
+.activeBtn{
+    background:linear-gradient(180deg, #f5d89f 0%, #ddb15c 100%);
+}
+.standartBtn{
+    border-radius: 0 0 0 0.4em;
+}
+.premiumtBtn{
+    border-radius: 0 0 0.4em 0;
+}
+.infoPrice-titles,
+.infoPrice-info{
+    display: flex;
+    justify-content: space-between;
+}
+
+.infoPrice-titles{
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+    color: #b8b8b8;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #b8b8b8;;
+}
+.infoPrice-info-size{
+    color: #757575;
+    font-size: 16px;
+    line-height: 1.1;
+    padding-top: 5px;
+    align-self: flex-end;
+}
+.infoPrice-info{
+    padding-top: 5px;
+}
+.infoPrice-info-coast{
+    font-size: 19px;
+    font-weight:900;
+    color: #757575;
+}
+.coast{
+    color: #ddb15c;
+    font-size: 24px;
+    
+    
 }
 .btn-shkaf{
 border-left:1px solid #545454 ;
@@ -263,4 +346,28 @@ border-right:1px solid #545454 ;
 .active{
     box-shadow:  3px 3px 5px black;
     border: 1px solid #545454;
+}
+.whyWe-consiltation{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    padding: 30px 40px;
+    background-color: #ffe5b1;
+    border-radius:1em;
+    color: #545454;
+}
+.consultation-img{
+    width: 100%;
+    border-radius: 1em;
+    margin-bottom: 15px;
+}
+.consultation-title{
+    text-align: start;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    color: #343434;
+}
+.consultation-text:first-of-type{
+   margin-bottom: 10px;
 }
