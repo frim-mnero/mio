@@ -262,6 +262,9 @@ body{
     font-weight: 600;
     color: #545454;
 }
+.model-mainInfo{
+    margin-bottom:-3px;
+}
 .model-item-img{
    width: 100%;
    border-radius: 0.4em 0.4em 0 0 ;
@@ -270,20 +273,30 @@ body{
     background:linear-gradient(180deg, #f5d89f 0%, #ddb15c 100%);
     border-radius: 0 0 0.4em 0.4em;
     margin-bottom: 8px;
+    position: relative;
 }
-
+.modelInfo-text{
+    text-align: center;
+    color:#fff;
+    font-size: 24px;
+    padding: 35px 24px ;
+    background-color: #00000076;
+    position: absolute;
+    right: 0;
+    bottom: 40px;
+}
 .model-item-btnsPrice{
     display: flex;
     width: 100%;
     gap:3px;
-    padding: 0 1px 2px 3px;
+    padding: 1px 1px 2px 3px;
 }
 .modelPrice-btn{
     font-size: 14px;
     color: #525252;
     line-height: 1.1;
     flex-grow: 1;
-    padding: 8px 0;
+    padding:10px 0;
     background-color: #fff;
     border: none;
 
