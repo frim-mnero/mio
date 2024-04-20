@@ -100,8 +100,6 @@ prices.forEach((e)=>{
                         </div>
                     </div>
                 </div>`;
-    
-
     containerKitchen.insertAdjacentHTML('beforeend',cardItem);
 
 })
