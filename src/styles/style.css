@@ -229,6 +229,7 @@ body{
     flex-direction: column;
 }
 .site__title{
+    margin-top: 30px;
     margin-bottom:35px;
     text-align: center;
     font-size:64px;
@@ -372,9 +373,11 @@ border-right:1px solid #545454 ;
     background-color: #ffe5b1;
     border-radius:1em;
     color: #545454;
+    
 }
 .consultation-img{
     width: 100%;
+    max-width:400px;
     border-radius: 1em;
     margin-bottom: 15px;
 }
@@ -386,4 +389,16 @@ border-right:1px solid #545454 ;
 }
 .consultation-text:first-of-type{
    margin-bottom: 10px;
+}
+.cons-center{
+    text-align: center;
+}
+.whyWE-gr{
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+}
+.consultation-info{
+    display: flex;
+    flex-direction: column;
 }
