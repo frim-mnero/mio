@@ -15,51 +15,73 @@ const prices = [
     },
     {
         "img":"kitchen01",
-        "standart":"119 000",
-        "komfort":"150 000",
-        "premium":"180 000"
+        "infoStandart":"Фасады - пленка пвх с фрезеровкой ",
+        "infoKomfort":"фасады – комбинированные (пластик, пленка пвх с фрезеровкой ). Фурнитура с доводчиком",
+        "infoStandart":"фасады –эмаль( крашенные) с фрезеровкой . Фурнитура  Blum,  Hettich",
+        "standart":"145 000",
+        "komfort":"187 000",
+        "premium":"231 000",
+        "size":"Длина 300 см,Ширина 130см"
     },
     {
         "img":"kitchen01",
-        "standart":"132 000",
-        "komfort":"192 000",
-        "premium":"256 000"
+        "infoStandart":"Фасады –пленка пвх с  интегрированной ручкой ",
+        "infoKomfort":"( фасады – пленка пвх с  интегрированной ручкой . Корпус лдсп Egger . Фурнитура с доводчиком",
+        "infoStandart":"(фасады –эмаль( крашенные) с  интегрированной ручкой . Фурнитура  Blum,  Hettich",
+        "standart":"230 000",
+        "komfort":"280 000",
+        "premium":"340 000",
+        "size":"Длина  380 см, Ширина 250см"
     },
     {
         "img":"kitchen01",
-        "standart":"123 000",
-        "komfort":"177 000",
-        "premium":"237 000"
+        "infoStandart":"Фасады - пленка пвх с фрезеровкой ",
+        "infoKomfort":"фасады – пленка пвх с фрезеровкой . Корпус лдсп Egger . фурнитура с доводчиком",
+        "infoStandart":"фасады –эмаль( крашенные). Фурнитура  Blum,  Hettich",
+        "standart":"180 000",
+        "komfort":"215 000",
+        "premium":"275 000",
+        "size":"Длина  200 см, Ширина 200см"
     },
     {
         "img":"kitchen01",
-        "standart":"105 000",
-        "komfort":"147 000",
-        "premium":"215 000"
+        "infoStandart":"Фасады - пленка пвх ",
+        "infoKomfort":" фасады - пластик . фурнитура с доводчиком",
+        "infoStandart":"фасады –пластик . Фурнитура  Blum,  Hettich",
+        "standart":"188 000",
+        "komfort":"235 000",
+        "premium":"290 000",
+        "size":"Длина 480 см"
     },
     {
         "img":"kitchen01",
-        "standart":"75 000",
-        "komfort":"103 000",
-        "premium":"146 000"
+        "infoStandart":"Фасады - пленка пвх с фрезеровкой ",
+        "infoKomfort":"фасады – пленка пвх с фрезеровкой ) . Фурнитура с доводчиком",
+        "infoStandart":"фасады –эмаль( крашенные) с фрезеровкой . Фурнитура  Blum,  Hettich",
+        "standart":"250 000",
+        "komfort":"320 000",
+        "premium":"390 000",
+        "size":"Длина  370 см,Ширина 220 см"
     }
 ]
-let price;
 
 
 const containerKitchen = document.querySelector('.models-items');
+const model_infoDescr=document.querySelectorAll(".model-item-description");
 
 
+let price;
+let modelDescriptionText;
 
 prices.forEach((e)=>{
+    modelDescriptionText=e.infoStandart;
     coastPrice=String(e.standart)
     let cardItem=` <div class="models-item">
                     <div class="model-mainInfo">
                         <img src="./src/images/${e.img}.jpg" alt="" class="model-item-img">
-                    
+                        <p class="model-item-description none">${modelDescriptionText}</p>
                     </div>
                     <div class="models-moreInfo">
-                        <!-- <p class="modelInfo-text">Белая кухня с интегрированной мойкой "модель 60"</p> -->
                         <div class="model-item-btnsPrice">
                             <button class="modelPrice-btn standartBtn activeBtn">Стандарт</button>
                             <button class="modelPrice-btn komfortBtn">Комфорт</button>
@@ -79,7 +101,7 @@ prices.forEach((e)=>{
                     </div>
                 </div>`;
     
-  
+
     containerKitchen.insertAdjacentHTML('beforeend',cardItem);
 
 })
@@ -89,13 +111,26 @@ const premiumtBtn = document.querySelectorAll(".premiumtBtn");
 
 const coast = document.querySelectorAll('.coast');
 
+
+for(let i = 0;i<standartBtn.length;i++){
+   standartBtn[i].onmouseenter=()=>{
+       
+   }
+   standartBtn[i].onmouseleave=()=>{
+   
+   }
+
+}
+
 for(let i=0;i<komforttBtn.length;i++){
     
     komforttBtn[i].onmouseenter=()=>{
      standartBtn[i].classList.remove("activeBtn");
      komforttBtn[i].classList.add("activeBtn");
+     console.log(model_infoDescr);
      for(let j = 0;j<prices.length;j++){
             coast[i].textContent=prices[i].komfort;
+           
         }
     }
     komforttBtn[i].onmouseleave=()=>{

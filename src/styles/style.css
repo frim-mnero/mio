@@ -267,6 +267,19 @@ body{
 }
 .model-mainInfo{
     margin-bottom:-3px;
+    position: relative;
+}
+.model-item-description{
+    text-align: end;
+    top: 0;
+    color: #fff;
+    position: absolute;
+    background-color: #0000009a;
+    padding: 30px 15px;
+    font-size: 30px;
+}
+.none{
+    display: none;
 }
 .model-item-img{
    width: 100%;
@@ -347,9 +360,8 @@ body{
 .coast{
     color: #ddb15c;
     font-size: 24px;
-    
-    
 }
+
 .btn-shkaf{
 border-left:1px solid #545454 ;
 border-right:1px solid #545454 ;
