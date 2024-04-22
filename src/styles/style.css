@@ -270,7 +270,6 @@ body{
     position: relative;
 }
 .model-item-description{
-    text-align: end;
     top: 0;
     color: #fff;
     position: absolute;
@@ -278,7 +277,7 @@ body{
     padding: 30px 15px;
     font-size: 30px;
 }
-.none{
+#none{
     display: none;
 }
 .model-item-img{
