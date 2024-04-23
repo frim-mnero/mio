@@ -246,11 +246,11 @@ button{
     row-gap: 30px;
 }
 .models-item{
-    max-width: 470px;
+    width: 470px;
     
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .models-btns{
