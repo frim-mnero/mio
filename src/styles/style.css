@@ -246,8 +246,7 @@ button{
     row-gap: 30px;
 }
 .models-item{
-    width: 470px;
-    
+    width: 450px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;

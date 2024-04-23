@@ -219,9 +219,11 @@ const model_infoDescr=document.querySelectorAll(".model-item-description");
 
 
 
+
+
 for(let i = 0;i<standartBtn.length;i++){
     standartBtn[i].onclick=()=>{
-        alert('standart click');
+        alert('standart click')
     }
     standartBtn[i].onmouseenter=()=>{
     model_infoDescr[i].removeAttribute('id');
