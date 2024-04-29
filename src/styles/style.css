@@ -360,7 +360,8 @@ button{
     font-weight:900;
     color: #757575;
 }
-.coast{
+.coast,
+.coastS{
     color: #ddb15c;
     font-size: 24px;
 }

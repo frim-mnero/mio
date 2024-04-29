@@ -193,7 +193,7 @@ function renderShkaf(){
                             </div>
                             <div class="infoPrice-info">
                                 <p class="infoPrice-info-size">${e.size}</p>
-                                <p class="infoPrice-info-coast"><span class="coast">${coastPrice}</span>  руб.</p>
+                                <p class="infoPrice-info-coast"><span class="coastS">${coastPrice}</span>  руб.</p>
                             </div>
                         </div>
                     </div>`;
@@ -208,6 +208,7 @@ renderShkaf();
 
 
 const coast = document.querySelectorAll('.coast');
+const coastS = document.querySelectorAll('.coastS');
 
 const btnks = document.querySelectorAll('.standartKitchen');
 const btnkk=document.querySelectorAll('.komfortKitchen');
@@ -307,7 +308,9 @@ btnShkaf.onclick=()=>{
         btnss[i].onmouseenter=()=>{
         
             model_infoDescr[i].removeAttribute('id');
-            model_infoDescr[i].textContent="prices[i].infoPremium";
+            model_infoDescr[i].textContent=shkafprice[i].infoPremium;
+
+            
         };
 
         btnss[i].onmouseleave=()=>{
@@ -321,12 +324,15 @@ btnShkaf.onclick=()=>{
             btnss[i].classList.remove('activeBtn');
 
             for(let j = 0;j<shkafprice.length;j++){
-                coast[i].textContent=shkafprice[j].komfort;           
+                coastS[i].textContent=shkafprice[i].komfort;
             }
         };
         btnsk[i].onmouseleave=()=>{
             btnsk[i].classList.remove('activeBtn');
             btnss[i].classList.add('activeBtn');
+            for(let j = 0;j<shkafprice.length;j++){
+                coastS[i].textContent=shkafprice[i].standart;
+            }
         };
     };
       
@@ -334,9 +340,15 @@ btnShkaf.onclick=()=>{
         btnsp[i].onmouseenter=()=>{
             btnsp[i].classList.add('activeBtn');
             btnss[i].classList.remove('activeBtn');
+            for(let j = 0;j<shkafprice.length;j++){
+                coastS[i].textContent=shkafprice[i].premium;
+            }
         };
         btnsp[i].onmouseleave=()=>{
             btnsp[i].classList.remove('activeBtn');
+            for(let j = 0;j<shkafprice.length;j++){
+                coastS[i].textContent=shkafprice[i].standart;
+            }
         };
     }
     
