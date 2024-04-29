@@ -176,7 +176,7 @@ function renderShkaf(){
         let cardItemShkaf=` <div class="models-item">
                         <div class="model-mainInfo">
                             <img src="./src/images/${e.img}.jpg" alt="" class="model-item-img">
-                            <p class="model-item-description" id="none"></p>
+                            <p class="model-item-descriptionS" id="none"></p>
                         </div>
                         <div class="models-moreInfo">
                             <div class="model-item-btnsPrice">
@@ -213,28 +213,33 @@ const btnks = document.querySelectorAll('.standartKitchen');
 const btnkk=document.querySelectorAll('.komfortKitchen');
 const btnkp=document.querySelectorAll('.premiumKitchen');
 
-const btnss = document.querySelector('standartShkaf');
-const btnsk = document.querySelector('komfortShkaf');
-const btnsp = document.querySelector('premiumShkaf');
+const btnss = document.querySelectorAll('.standartShkaf');
+const btnsk = document.querySelectorAll('.komfortShkaf');
+const btnsp = document.querySelectorAll('.premiumShkaf');
 
 const model_infoDescr=document.querySelectorAll(".model-item-description");
+const model_infoDescrShkaf=document.querySelectorAll(".model-item-description");
 
-let namer=1;
+console.log(btnss.length);
+
 
 btnKitchen.onclick=()=>{
     kitchen.classList.remove('none');
     shkaf.classList.add('none');
+    btnKitchen.classList.add('active');
+    btnShkaf.classList.remove('active');
     namer=1;
     console.log(namer);
 };
 
 btnShkaf.onclick=()=>{
+    btnKitchen.classList.remove('active');
+    btnShkaf.classList.add('active');
     kitchen.classList.add('none');
     shkaf.classList.remove('none');
-    namer=2;
-    console.log(namer);
+
 };
-if(namer==1){
+
     for(let i = 0;i<btnks.length;i++){
         btnks[i].onmouseenter=()=>{
             model_infoDescr[i].removeAttribute('id');
@@ -295,21 +300,44 @@ if(namer==1){
                 coast[i].textContent=prices[i].standart;
             }
         };
-    }
+    };
     
-
-    
-}
-
-if(namer==2){
+ //standart shkaf
     for(let i = 0;i<btnss.length;i++){
         btnss[i].onmouseenter=()=>{
+        
             model_infoDescr[i].removeAttribute('id');
-            model_infoDescr[i].textContent=shkafprice[i].infoStandart;
+            model_infoDescr[i].textContent="prices[i].infoPremium";
         };
+
         btnss[i].onmouseleave=()=>{
             model_infoDescr[i].setAttribute('id','none');
         };
     }
-}
+
+    for(let i = 0;i<btnsk.length;i++){
+        btnsk[i].onmouseenter=()=>{
+            btnsk[i].classList.add('activeBtn');
+            btnss[i].classList.remove('activeBtn');
+
+            for(let j = 0;j<shkafprice.length;j++){
+                coast[i].textContent=shkafprice[j].komfort;           
+            }
+        };
+        btnsk[i].onmouseleave=()=>{
+            btnsk[i].classList.remove('activeBtn');
+            btnss[i].classList.add('activeBtn');
+        };
+    };
+      
+    for(let i = 0;i<btnsp.length;i++){
+        btnsp[i].onmouseenter=()=>{
+            btnsp[i].classList.add('activeBtn');
+            btnss[i].classList.remove('activeBtn');
+        };
+        btnsp[i].onmouseleave=()=>{
+            btnsp[i].classList.remove('activeBtn');
+        };
+    }
+    
 
