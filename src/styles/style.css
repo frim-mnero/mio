@@ -271,7 +271,8 @@ button{
     margin-bottom:-3px;
     position: relative;
 }
-.model-item-description{
+.model-item-description,
+.model-item-descriptionS{
     top: 0;
     color: #fff;
     position: absolute;

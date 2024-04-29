@@ -219,7 +219,7 @@ const btnsk = document.querySelectorAll('.komfortShkaf');
 const btnsp = document.querySelectorAll('.premiumShkaf');
 
 const model_infoDescr=document.querySelectorAll(".model-item-description");
-const model_infoDescrShkaf=document.querySelectorAll(".model-item-description");
+const model_infoDescrShkaf=document.querySelectorAll(".model-item-descriptionS");
 
 console.log(btnss.length);
 
@@ -306,15 +306,12 @@ btnShkaf.onclick=()=>{
  //standart shkaf
     for(let i = 0;i<btnss.length;i++){
         btnss[i].onmouseenter=()=>{
-        
-            model_infoDescr[i].removeAttribute('id');
-            model_infoDescr[i].textContent=shkafprice[i].infoPremium;
-
-            
+            model_infoDescrShkaf[i].removeAttribute('id');
+            model_infoDescrShkaf[i].textContent=shkafprice[i].infoStandart;
         };
 
         btnss[i].onmouseleave=()=>{
-            model_infoDescr[i].setAttribute('id','none');
+            model_infoDescrShkaf[i].setAttribute('id','none');
         };
     }
 
@@ -322,7 +319,8 @@ btnShkaf.onclick=()=>{
         btnsk[i].onmouseenter=()=>{
             btnsk[i].classList.add('activeBtn');
             btnss[i].classList.remove('activeBtn');
-
+            model_infoDescrShkaf[i].removeAttribute('id');
+            model_infoDescrShkaf[i].textContent=shkafprice[i].infoKomfort;
             for(let j = 0;j<shkafprice.length;j++){
                 coastS[i].textContent=shkafprice[i].komfort;
             }
@@ -330,6 +328,7 @@ btnShkaf.onclick=()=>{
         btnsk[i].onmouseleave=()=>{
             btnsk[i].classList.remove('activeBtn');
             btnss[i].classList.add('activeBtn');
+            model_infoDescrShkaf[i].setAttribute('id','none');
             for(let j = 0;j<shkafprice.length;j++){
                 coastS[i].textContent=shkafprice[i].standart;
             }
@@ -340,12 +339,16 @@ btnShkaf.onclick=()=>{
         btnsp[i].onmouseenter=()=>{
             btnsp[i].classList.add('activeBtn');
             btnss[i].classList.remove('activeBtn');
+            model_infoDescrShkaf[i].removeAttribute('id');
+            model_infoDescrShkaf[i].textContent=shkafprice[i].infoPremium;
             for(let j = 0;j<shkafprice.length;j++){
                 coastS[i].textContent=shkafprice[i].premium;
             }
         };
         btnsp[i].onmouseleave=()=>{
             btnsp[i].classList.remove('activeBtn');
+            btnss[i].classList.add('activeBtn');
+            model_infoDescrShkaf[i].setAttribute('id','none');
             for(let j = 0;j<shkafprice.length;j++){
                 coastS[i].textContent=shkafprice[i].standart;
             }
