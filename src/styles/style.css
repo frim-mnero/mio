@@ -279,9 +279,12 @@ button{
     padding: 30px 15px;
     font-size: 30px;
 }
-#none{
+
+#none,
+.none{
     display: none;
 }
+
 .model-item-img{
    width: 100%;
    height: 389px;

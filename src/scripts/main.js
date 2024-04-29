@@ -1,7 +1,4 @@
 
-
-
-let coastPrice;
 const prices = [
     {
         "img":"kitchen01",
@@ -128,50 +125,17 @@ const shkafprice=[
     }
 ];
 
-const containerKitchen = document.querySelector('.models-items');
-const btnShkaf=document.querySelector(".btn-shkaf");
-const btnKitchen=document.querySelector(".btn-kitchen");
-const btnOther = document.querySelector('.btn-other');
-const contBtns=document.querySelectorAll('models-btn-item');
+const kitchen=document.querySelector('.kitchen');
+const shkaf = document.querySelector('.shkaf');
+const other = document.querySelector('.other');
 
-renderKitchen();
+const btnKitchen=document.querySelector('.btn-kitchen');
+const btnShkaf=document.querySelector('.btn-shkaf');
+const btnOther=document.querySelector('.btn-other');
 
 
-const coast = document.querySelectorAll('.coast');
 
-const model_infoDescr=document.querySelectorAll(".model-item-description");
-function renderShkaf(){
-    shkafprice.forEach((e)=>{
-        modelDescriptionText=e.infoStandart;
-        coastPrice=String(e.standart)
-        let cardItemShkaf=` <div class="models-item">
-                        <div class="model-mainInfo">
-                            <img src="./src/images/${e.img}.jpg" alt="" class="model-item-img">
-                            <p class="model-item-description" id="none"></p>
-                        </div>
-                        <div class="models-moreInfo">
-                            <div class="model-item-btnsPrice">
-                                <button class="modelPrice-btn standartBtn activeBtn">Стандарт</button>
-                                <button class="modelPrice-btn komfortBtn shkaf">Комфорт</button>
-                                <button class="modelPrice-btn premiumtBtn">Премиум</button>
-                            </div>
-                        </div>
-    
-                        <div class="model-infoPrice">
-                            <div class="infoPrice-titles">
-                                <p class="infoPrice-title">Габаритные размеры</p>
-                                <p class="infoPrice-title">Стоимость</p>
-                            </div>
-                            <div class="infoPrice-info">
-                                <p class="infoPrice-info-size">${e.size}</p>
-                                <p class="infoPrice-info-coast"><span class="coast">${coastPrice}</span>  руб.</p>
-                            </div>
-                        </div>
-                    </div>`;
-                    containerKitchen.insertAdjacentHTML('beforeend',cardItemShkaf);
-    });
-    
-};
+
 function renderKitchen(){
     prices.forEach((e)=>{
         modelDescriptionText=e.infoStandart;
@@ -184,9 +148,9 @@ function renderKitchen(){
                         </div>
                         <div class="models-moreInfo">
                             <div class="model-item-btnsPrice">
-                                <button class="modelPrice-btn standartBtn activeBtn">Стандарт</button>
-                                <button class="modelPrice-btn komfortBtn kitchen">Комфорт</button>
-                                <button class="modelPrice-btn premiumtBtn">Премиум</button>
+                                <button class="modelPrice-btn standartBtn activeBtn standartKitchen">Стандарт</button>
+                                <button class="modelPrice-btn komfortBtn komfortKitchen">Комфорт</button>
+                                <button class="modelPrice-btn premiumtBtn premiumKitchen">Премиум</button>
                             </div>
                         </div>
     
@@ -201,97 +165,151 @@ function renderKitchen(){
                             </div>
                         </div>
                     </div>`;
-        containerKitchen.insertAdjacentHTML('beforeend',cardItem);
+                    kitchen.insertAdjacentHTML('beforeend',cardItem);
     });
     
 };
-const standartBtn = document.querySelectorAll(".standartBtn");
-const komforttBtn = document.querySelectorAll(".komfortBtn");
-const premiumtBtn = document.querySelectorAll(".premiumtBtn");
+function renderShkaf(){
+    shkafprice.forEach((e)=>{
+        modelDescriptionText=e.infoStandart;
+        coastPrice=String(e.standart)
+        let cardItemShkaf=` <div class="models-item">
+                        <div class="model-mainInfo">
+                            <img src="./src/images/${e.img}.jpg" alt="" class="model-item-img">
+                            <p class="model-item-description" id="none"></p>
+                        </div>
+                        <div class="models-moreInfo">
+                            <div class="model-item-btnsPrice">
+                                <button class="modelPrice-btn standartBtn activeBtn standartShkaf">Стандарт</button>
+                                <button class="modelPrice-btn komfortBtn komfortShkaf">Комфорт</button>
+                                <button class="modelPrice-btn premiumtBtn premiumShkaf">Премиум</button>
+                            </div>
+                        </div>
+    
+                        <div class="model-infoPrice">
+                            <div class="infoPrice-titles">
+                                <p class="infoPrice-title">Габаритные размеры</p>
+                                <p class="infoPrice-title">Стоимость</p>
+                            </div>
+                            <div class="infoPrice-info">
+                                <p class="infoPrice-info-size">${e.size}</p>
+                                <p class="infoPrice-info-coast"><span class="coast">${coastPrice}</span>  руб.</p>
+                            </div>
+                        </div>
+                    </div>`;
+                    shkaf.insertAdjacentHTML('beforeend',cardItemShkaf);
+    });
+    
+};
+
+renderKitchen();
+renderShkaf(); 
+
+
+
+const coast = document.querySelectorAll('.coast');
+
+const btnks = document.querySelectorAll('.standartKitchen');
+const btnkk=document.querySelectorAll('.komfortKitchen');
+const btnkp=document.querySelectorAll('.premiumKitchen');
+
+const btnss = document.querySelector('standartShkaf');
+const btnsk = document.querySelector('komfortShkaf');
+const btnsp = document.querySelector('premiumShkaf');
+
+const model_infoDescr=document.querySelectorAll(".model-item-description");
+
+let namer=1;
 
 btnKitchen.onclick=()=>{
-    btnShkaf.classList.remove('active');
-    btnOther.classList.remove('active');
-    btnKitchen.classList.add('active');
+    kitchen.classList.remove('none');
+    shkaf.classList.add('none');
+    namer=1;
+    console.log(namer);
+};
+
+btnShkaf.onclick=()=>{
+    kitchen.classList.add('none');
+    shkaf.classList.remove('none');
+    namer=2;
+    console.log(namer);
+};
+if(namer==1){
+    for(let i = 0;i<btnks.length;i++){
+        btnks[i].onmouseenter=()=>{
+            model_infoDescr[i].removeAttribute('id');
+            model_infoDescr[i].textContent=prices[i].infoStandart;
+        };
     
-    while(containerKitchen.firstChild){
-        containerKitchen.removeChild(containerKitchen.firstChild);
+        btnks[i].onmouseleave=()=>{
+            model_infoDescr[i].setAttribute('id','none');
+        };
+    };
+    
+    
+    
+    for(let i = 0;i<btnkk.length;i++){
+        btnkk[i].onmouseenter=()=>{
+            btnkk[i].classList.add('activeBtn');
+            btnks[i].classList.remove('activeBtn');
+    
+            model_infoDescr[i].removeAttribute('id');
+            model_infoDescr[i].textContent=prices[i].infoKomfort;
+    
+            for(let j = 0;j<prices.length;j++){
+                coast[i].textContent=prices[i].komfort;           
+            }
+            
+        };
+    
+        btnkk[i].onmouseleave=()=>{
+            btnkk[i].classList.remove('activeBtn');
+            btnks[i].classList.add('activeBtn');
+    
+            model_infoDescr[i].setAttribute('id','none');
+    
+            for(let j = 0;j<prices.length;j++){
+                coast[i].textContent=prices[i].standart;
+            }
+        };
     }
-    renderKitchen();
-    standartBtn.forEach((e)=>{
-      
-    });
+    
+    for(let i = 0;i<btnkp.length;i++){
+        btnkp[i].onmouseenter=()=>{
+            btnkp[i].classList.add('activeBtn');
+            btnks[i].classList.remove('activeBtn');
+    
+            model_infoDescr[i].removeAttribute('id');
+            model_infoDescr[i].textContent=prices[i].infoPremium;
+    
+            for(let j = 0;j<prices.length;j++){
+                coast[i].textContent=prices[i].premium;
+            }
+    
+        };
+        btnkp[i].onmouseleave=()=>{
+            btnkp[i].classList.remove('activeBtn');
+            model_infoDescr[i].setAttribute('id','none');
+    
+            for(let j = 0;j<prices.length;j++){
+                coast[i].textContent=prices[i].standart;
+            }
+        };
+    }
+    
+
+    
 }
 
-btnShkaf.onclick =()=>{
-    btnKitchen.classList.remove('active');
-    btnOther.classList.remove('active');
-    btnShkaf.classList.add('active');
-    while(containerKitchen.firstChild){
-        containerKitchen.removeChild(containerKitchen.firstChild);
-    }
-   renderShkaf();
-   for(let i = 0;i<standartBtn.length;i++){
-    standartBtn[i].onmouseenter=()=>{
-        model_infoDescr[i].removeAttribute('id');
-        model_infoDescr[i].textContent=prices[i].infoStandart; 
-       }
-       standartBtn[i].onmouseleave=()=>{
-        model_infoDescr[i].setAttribute('id','none');
-       }
-
-};
-};
-for(let i = 0;i<standartBtn.length;i++){
-        standartBtn[i].onmouseenter=()=>{
+if(namer==2){
+    for(let i = 0;i<btnss.length;i++){
+        btnss[i].onmouseenter=()=>{
             model_infoDescr[i].removeAttribute('id');
-            model_infoDescr[i].textContent=prices[i].infoStandart; 
-           }
-           standartBtn[i].onmouseleave=()=>{
+            model_infoDescr[i].textContent=shkafprice[i].infoStandart;
+        };
+        btnss[i].onmouseleave=()=>{
             model_infoDescr[i].setAttribute('id','none');
-           }
+        };
+    }
+}
 
-};
-
-for(let i=0;i<komforttBtn.length;i++){
-    
-    komforttBtn[i].onmouseenter=()=>{
-     standartBtn[i].classList.remove("activeBtn");
-     komforttBtn[i].classList.add("activeBtn");
-        model_infoDescr[i].removeAttribute('id');
-         model_infoDescr[i].textContent=prices[i].infoKomfort;
-     for(let j = 0;j<prices.length;j++){
-            coast[i].textContent=prices[i].komfort;           
-        }
-    }
-    komforttBtn[i].onmouseleave=()=>{
-        komforttBtn[i].classList.remove("activeBtn");
-        standartBtn[i].classList.add("activeBtn");
-        for(let j = 0;j<prices.length;j++){
-            coast[i].textContent=prices[i].standart;
-            model_infoDescr[i].setAttribute('id','none');
-        }
-    }
-};
-
-for(let i=0;i<premiumtBtn.length;i++){
-    premiumtBtn[i].onmouseenter=()=>{
-     standartBtn[i].classList.remove("activeBtn");
-     premiumtBtn[i].classList.add("activeBtn");
-     model_infoDescr[i].removeAttribute('id');
-     model_infoDescr[i].textContent=prices[i].infoPremium;
-     for(let j = 0;j<prices.length;j++){
-        coast[i].textContent=prices[i].premium;
-    }
-    }
-    premiumtBtn[i].onmouseleave=()=>{
-        premiumtBtn[i].classList.remove("activeBtn");
-        standartBtn[i].classList.add("activeBtn");
-        for(let j = 0;j<prices.length;j++){
-            coast[i].textContent=prices[i].standart;
-            model_infoDescr[i].setAttribute('id','none');
-        }
-
-    }
-   
-};
