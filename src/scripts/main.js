@@ -241,6 +241,8 @@ btnShkaf.onclick=()=>{
 
 };
 
+// standart kitchen
+
     for(let i = 0;i<btnks.length;i++){
         btnks[i].onmouseenter=()=>{
             model_infoDescr[i].removeAttribute('id');
