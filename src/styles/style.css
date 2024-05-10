@@ -500,3 +500,11 @@ border-right:1px solid #545454 ;
 .technika{
     flex: 1 0 auto;
 }
+.imgMaterial{
+    width: 400px;
+}
+.materials-cont{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
