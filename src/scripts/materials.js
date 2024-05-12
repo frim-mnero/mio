@@ -110,10 +110,6 @@ const stols=[
      "description":"Ультратонкая"   
     },
     {
-     "img":"stol8.2",
-     "description":"Ультратонкая"   
-    },
-    {
      "img":"stol9",
      "description":"Искусственный камень"   
     },
@@ -123,11 +119,12 @@ const furnitureCont = document.querySelector('.phurniture-cont');
 const fasadsCont = document.querySelector(".fasads-cont");
 const stolCont = document.querySelector(".stol-cont");
 
+
 furniture.forEach((e)=>{
     let furnItemCard = `
         <div class="itemMaterial">
-            <img src="./src/images/materials/${e.img}.jpg" alt="" class="imgMaterial">
-            <p class="material-desrcr none">${e.description}</p>                
+            <img src="./src/images/materials/${e.img}.jpg" alt="" class="imgMaterial imgFurn">
+            <p class="material-desrcr descrFurn none">${e.description}</p>                
         </div>
             `;
     furnitureCont.insertAdjacentHTML('beforeend',furnItemCard);
@@ -136,8 +133,8 @@ furniture.forEach((e)=>{
 fasads.forEach((e)=>{
     let fasadItemCard = `
         <div class="itemMaterial">
-            <img src="./src/images/fasads/${e.img}.jpg" alt="" class="imgMaterial">
-            <p class="material-desrcr none">${e.description}</p>                
+            <img src="./src/images/fasads/${e.img}.jpg" alt="" class="imgMaterial imgFasad">
+            <p class="material-desrcr descrFasad none">${e.description}</p>                
         </div>
             `;
     fasadsCont.insertAdjacentHTML('beforeend',fasadItemCard);
@@ -146,8 +143,8 @@ fasads.forEach((e)=>{
 stols.forEach((e)=>{
     let stolItemCard = `
         <div class="itemMaterial">
-            <img src="./src/images/stols/${e.img}.jpg" alt="" class="imgMaterial">
-            <p class="material-desrcr none">${e.description}</p>                
+            <img src="./src/images/stols/${e.img}.jpg" alt="" class="imgMaterial imgStol">
+            <p class="material-desrcr descrStol none">${e.description}</p>                
         </div>
             `;
     stolCont.insertAdjacentHTML('beforeend',stolItemCard);
@@ -188,3 +185,58 @@ stolBtn.onclick=()=>{
     fasadsCont.classList.add('noneMat');
     stolCont.classList.remove('noneMat');
 }
+
+let imgFurn = document.querySelectorAll('.imgFurn');
+let descrFurn = document.querySelectorAll('.descrFurn');
+let imgFasad = document.querySelectorAll(".imgFasad");
+let descrFasad = document.querySelectorAll('.descrFasad');
+let imgStol = document.querySelectorAll('.imgStol');
+let descrStol = document.querySelectorAll('.descrStol');
+
+
+itemMaterial=document.querySelectorAll('.itemMaterial');
+body = document.querySelector('body');
+
+let countOpenOffItem=0;
+
+for(let i = 0;i<imgFurn.length;i++){
+    imgFurn[i].onclick=()=>{
+        countOpenOffItem++;
+        imgFurn[i].classList.add('fixedCenterMaterial');
+        body.classList.add('noScroll');
+        itemMaterial[i].classList.add('shadow');
+        if(countOpenOffItem%2==0){
+            imgFurn[i].classList.remove('fixedCenterMaterial');
+            body.classList.remove('noScroll');
+            itemMaterial[i].classList.remove('shadow');
+        }
+    }
+};
+
+for(let i = 0;i<imgFasad.length;i++){
+    imgFasad[i].onclick=()=>{
+        countOpenOffItem++;
+        imgFasad[i].classList.add('fixedCenterMaterial');
+        body.classList.add('noScroll');
+        itemMaterial[i].classList.add('shadow');
+        if(countOpenOffItem%2==0){
+            imgFasad[i].classList.remove('fixedCenterMaterial');
+            body.classList.remove('noScroll');
+            itemMaterial[i].classList.remove('shadow');
+        }
+    }
+};
+
+for(let i = 0;i<imgStol.length;i++){
+    imgStol[i].onclick=()=>{
+        countOpenOffItem++;
+        imgStol[i].classList.add('fixedCenterMaterial');
+        body.classList.add('noScroll');
+        itemMaterial[i].classList.add('shadow');
+        if(countOpenOffItem%2==0){
+            imgStol[i].classList.remove('fixedCenterMaterial');
+            body.classList.remove('noScroll');
+            itemMaterial[i].classList.remove('shadow');
+        }
+    }
+};

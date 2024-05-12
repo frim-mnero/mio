@@ -221,7 +221,6 @@ const btnsp = document.querySelectorAll('.premiumShkaf');
 const model_infoDescr=document.querySelectorAll(".model-item-description");
 const model_infoDescrShkaf=document.querySelectorAll(".model-item-descriptionS");
 
-console.log(btnss.length);
 
 
 btnKitchen.onclick=()=>{

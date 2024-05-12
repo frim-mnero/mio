@@ -502,6 +502,8 @@ border-right:1px solid #545454 ;
 }
 .itemMaterial{
     width: 400px;
+    position: relative;
+    cursor: pointer;
 }
 .imgMaterial{
     width: 100%;
@@ -517,4 +519,36 @@ border-right:1px solid #545454 ;
 }
 .noneMat{
     display: none;
+}
+.material-desrcr{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    padding: 40px;
+    color: #fff;
+    top: 0;
+    z-index: 2;
+    font-size: 25px;
+    font-weight: 900;
+    background-color: #00000071;
+}
+.fixedCenterMaterial{
+    position: fixed;
+    width: 1200px;
+    height: 800px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+.shadow{
+    background:#000000c7;
+    position: absolute; 
+    top: 0;
+    width: 100vw;
+    height:100000px;
+    z-index: 9;
+}
+.noScroll{
+    overflow: hidden;
 }
