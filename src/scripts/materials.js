@@ -132,7 +132,7 @@ furniture.forEach((e)=>{
 
 fasads.forEach((e)=>{
     let fasadItemCard = `
-        <div class="itemMaterial">
+        <div class="itemMaterial matFas">
             <img src="./src/images/fasads/${e.img}.jpg" alt="" class="imgMaterial imgFasad">
             <p class="material-desrcr descrFasad none">${e.description}</p>                
         </div>
@@ -142,7 +142,7 @@ fasads.forEach((e)=>{
 
 stols.forEach((e)=>{
     let stolItemCard = `
-        <div class="itemMaterial">
+        <div class="itemMaterial matStol">
             <img src="./src/images/stols/${e.img}.jpg" alt="" class="imgMaterial imgStol">
             <p class="material-desrcr descrStol none">${e.description}</p>                
         </div>
@@ -193,8 +193,11 @@ let descrFasad = document.querySelectorAll('.descrFasad');
 let imgStol = document.querySelectorAll('.imgStol');
 let descrStol = document.querySelectorAll('.descrStol');
 
-itemMaterial=document.querySelectorAll('.itemMaterial');
-body = document.querySelector('body');
+let itemMaterial=document.querySelectorAll('.itemMaterial');
+let matFas=document.querySelectorAll('.matFas');
+let matStol=document.querySelectorAll('.matStol');
+
+let body = document.querySelector('body');
 
 let countOpenOffItem=0;
 
@@ -219,12 +222,12 @@ for(let i = 0;i<imgFasad.length;i++){
         countOpenOffItem++;
         imgFasad[i].classList.add('fixedCenterMaterial');
         body.classList.add('noScroll');
-        itemMaterial[i].classList.add('shadow');
+        matFas[i].classList.add('shadow');
         descrFasad[i].classList.remove('none');
         if(countOpenOffItem%2==0){
             imgFasad[i].classList.remove('fixedCenterMaterial');
             body.classList.remove('noScroll');
-            itemMaterial[i].classList.remove('shadow');
+            matFas[i].classList.remove('shadow');
             descrFasad[i].classList.add('none');
         }
     }
@@ -235,12 +238,12 @@ for(let i = 0;i<imgStol.length;i++){
         countOpenOffItem++;
         imgStol[i].classList.add('fixedCenterMaterial');
         body.classList.add('noScroll');
-        itemMaterial[i].classList.add('shadow');
+        matStol[i].classList.add('shadow');
         descrStol[i].classList.remove('none');
         if(countOpenOffItem%2==0){
             imgStol[i].classList.remove('fixedCenterMaterial');
             body.classList.remove('noScroll');
-            itemMaterial[i].classList.remove('shadow');
+            matStol[i].classList.remove('shadow');
             descrStol[i].classList.add('none');
         }
     }
