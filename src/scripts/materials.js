@@ -193,7 +193,6 @@ let descrFasad = document.querySelectorAll('.descrFasad');
 let imgStol = document.querySelectorAll('.imgStol');
 let descrStol = document.querySelectorAll('.descrStol');
 
-
 itemMaterial=document.querySelectorAll('.itemMaterial');
 body = document.querySelector('body');
 
@@ -205,10 +204,12 @@ for(let i = 0;i<imgFurn.length;i++){
         imgFurn[i].classList.add('fixedCenterMaterial');
         body.classList.add('noScroll');
         itemMaterial[i].classList.add('shadow');
+        descrFurn[i].classList.remove('none');
         if(countOpenOffItem%2==0){
             imgFurn[i].classList.remove('fixedCenterMaterial');
             body.classList.remove('noScroll');
             itemMaterial[i].classList.remove('shadow');
+            descrFurn[i].classList.add('none');
         }
     }
 };
@@ -219,10 +220,12 @@ for(let i = 0;i<imgFasad.length;i++){
         imgFasad[i].classList.add('fixedCenterMaterial');
         body.classList.add('noScroll');
         itemMaterial[i].classList.add('shadow');
+        descrFasad[i].classList.remove('none');
         if(countOpenOffItem%2==0){
             imgFasad[i].classList.remove('fixedCenterMaterial');
             body.classList.remove('noScroll');
             itemMaterial[i].classList.remove('shadow');
+            descrFasad[i].classList.add('none');
         }
     }
 };
@@ -233,10 +236,12 @@ for(let i = 0;i<imgStol.length;i++){
         imgStol[i].classList.add('fixedCenterMaterial');
         body.classList.add('noScroll');
         itemMaterial[i].classList.add('shadow');
+        descrStol[i].classList.remove('none');
         if(countOpenOffItem%2==0){
             imgStol[i].classList.remove('fixedCenterMaterial');
             body.classList.remove('noScroll');
             itemMaterial[i].classList.remove('shadow');
+            descrStol[i].classList.add('none');
         }
     }
 };
